@@ -133,3 +133,52 @@ let filteredCars = cars.filter((cadaCoche) => {
 })
 
 console.log(filteredCars)
+
+
+// .reduce()
+
+let someNumbers = [1, 2, 3, 4, 5]
+
+// sumar todos estos numeros
+// let sum = 0;
+// for (let i = 0; i < someNumbers.length; i++) {
+//   let cadaValor = someNumbers[i]
+//   sum += cadaValor
+// }
+
+// console.log(sum)
+
+let sum2 = someNumbers.reduce((acumulador, cadaValor) => {
+
+  console.log(acumulador, cadaValor)
+  // SIEMPRE tenemos que retornar lo que será el valor proximo del acumulador.
+  return acumulador + cadaValor
+
+}, 0)
+
+console.log(sum2)
+
+
+const people = [
+  { name: 'Candice', candy: 25 },
+  { name: 'Tammy', candy: 30 },
+  { name: 'Allen' },
+  { name: 'Nettie', candy: 20 },
+  { name: 'Stuart', candy: 17 },
+  { name: 'Bill', candy: 19 },
+];
+
+// sumar todos los caramelitos de las personas
+
+let totalCandy = people.reduce((acc, eachPerson) => {
+
+  console.log(acc, eachPerson.candy)
+  if (eachPerson.candy !== undefined) {
+    return acc + eachPerson.candy
+  } else {
+    return acc
+  }
+
+}, 0)
+
+console.log(totalCandy)
