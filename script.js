@@ -182,3 +182,73 @@ let totalCandy = people.reduce((acc, eachPerson) => {
 }, 0)
 
 console.log(totalCandy)
+
+
+// .reverse() // muta el original
+// .toReversed() // no muta el array original, crear un nuevo array
+
+let orderedNumbers = [1, 2, 3, 4, 5] // ref 1234
+
+let arrayInvertido = orderedNumbers.toReversed() // ref 4567
+
+console.log(arrayInvertido) // ref 4567
+console.log(orderedNumbers) // ref 1234. muta el array original
+
+
+// sort() // muta el original
+// toSorted() // no muta el array original, crear un nuevo array
+
+
+let someLetters = ["a", "e", "c", "b", "d"]
+
+someLetters.sort()
+
+console.log(someLetters)
+
+let numeros = [30, 1, 400, 2, 3, 50, 1000]
+
+numeros.sort((elemento1, elemento2) => {
+
+  // un algoritmo de orden
+  // TENEMOS que retornar un valor numerico
+  // - positivo: el elemento2 elemento va primero
+  // - negativo: el elemento1 elemento va primero
+  // - 0: no debes cambiar el orden
+  console.log(elemento1, elemento2)
+
+  if (elemento1 < elemento2) {
+    return -1
+  } else if (elemento2 < elemento1) {
+    return +1
+  } else {
+    return 0
+  }
+
+})
+
+console.log(numeros)
+
+
+const people2 = [
+  { name: 'Candice', candy: 25 },
+  { name: 'Tammy', candy: 30 },
+  { name: 'Allen', candy: 40 },
+  { name: 'Nettie', candy: 20 },
+  { name: 'Stuart', candy: 17 },
+  { name: 'Bill', candy: 19 },
+];
+
+
+people2.sort((persona1, persona2) => {
+
+  if (persona1.candy < persona2.candy) {
+    return -1
+  } else if (persona2.candy < persona1.candy) {
+    return +1
+  } else {
+    return 0
+  }
+
+})
+
+console.log(people2)
